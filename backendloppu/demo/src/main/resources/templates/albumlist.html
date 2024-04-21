@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" th:href="@{/styles.css}"/>
-    <title>Document</title>
+    <title>Albumlist</title>
   </head>
   <body>
-    <h1>Booklist</h1>
+    <h1>Albumlist</h1>
 
     <table border="1">
       <thead>
@@ -15,6 +15,7 @@
           <th>Title</th>
           <th>Description</th>
           <th>Publishing Year</th>
+          <th>Record Label</th>
           <th>Price</th>
           <th>Category</th>
           <th>Actions</th>
@@ -26,6 +27,7 @@
           <td th:text="${album.title}"></td>
           <td th:text="${album.desc}"></td>
           <td th:text="${album.publYear}"></td>
+          <td th:text="${album.recordLabel}"></td>
           <td th:text="${album.price}"></td>
           <td th:text="${album.category.name}"></td>
           <td>
