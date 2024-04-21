@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" th:href="@{/styles.css}"/>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Booklist</h1>
+
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Artist</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Publishing Year</th>
+          <th>Price</th>
+          <th>Category</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="album : ${albums}">
+          <td th:text="${album.artist}"></td>
+          <td th:text="${album.title}"></td>
+          <td th:text="${album.desc}"></td>
+          <td th:text="${album.publYear}"></td>
+          <td th:text="${album.price}"></td>
+          <td th:text="${album.category.name}"></td>
+          <td>
+            <a th:href="@{'/deletealbum/' + ${album.id}}">Delete</a>
+            <a th:href="@{'/editalbum/' + ${album.id}}">Edit</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <a th:href="@{/addalbum}">Add album</a>
+    <a th:href="@{/categorylist}">Browse categories</a>
+  </body>
+</html>

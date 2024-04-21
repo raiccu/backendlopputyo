@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" th:href="@{/styles.css}"/>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Category List</h1>
+
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="category : ${categories}">
+          <td th:text="${category.name}"></td>
+        </tr>
+      </tbody>
+    </table>
+    <a th:href="@{/addcategory}">Add Category</a>
+    <a th:href="@{/albumlist}">Browse albums</a>
+  </body>
+</html>
